@@ -138,7 +138,8 @@ def main():
     print(f'Saving model to {save_name}')
 
     # Callbacks
-    wandb.login(key = "965cef3403bf83b2b544978bf876398194b9908c")
+    wandb_key=""#change the key, signup for wandb and get the key and place it here
+    wandb.login(key = wandb_key)
     wandb_logger = WandbLogger(name=save_name, project="author_profiling_extension")
     checkpoint_callback = ModelCheckpoint('model',
                                           filename=save_name,
